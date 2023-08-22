@@ -20,8 +20,8 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
-## Testing with Postman
-Open up Postman 
+# Testing with Postman
+## Open up Postman 
 
 ### To test main: 
 
@@ -29,13 +29,18 @@ GET request localhost:3000
 > Return "Hello World!"
 
 ### To Test Products API:
-
-> Get All Products: GET localhost:3000/products
-> Get Product by ID: GET localhost:3000/products/:id
->
-
  ```javascript
-Create Product: 
+
+> Get All Products: 
+GET localhost:3000/products
+
+> Get Product by ID: 
+GET localhost:3000/products/:id
+
+> Delete Product by ID:
+DELETE localhost:3000/products/:id
+
+> Create Product: 
 POST localhost:3000/products/
   {
     title: "title",
@@ -43,10 +48,6 @@ POST localhost:3000/products/
     status: "TODO"
   }
 ```
-
-
-> Delete Product by ID: DELETE localhost:3000/products/:id
-
 
 ## Test
 ```bash
