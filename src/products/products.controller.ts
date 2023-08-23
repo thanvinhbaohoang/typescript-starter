@@ -1,18 +1,18 @@
 import { Controller, Post, Get, Delete, Body, Param } from '@nestjs/common';
 import { ProductsService } from './products.service';
-import { taskStatusEnum } from './products.model';
+// import { taskStatusEnum } from './products.model';
 
 @Controller('products')
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
   @Post()
-  addProduct(
+  async addProduct(
     @Body('title') prodTitle: string,
     @Body('description') prodDesc: string,
-    @Body('status') prodStatus: taskStatusEnum,
+    @Body('status') prodStatus: string,
   ) {
-    const generatedID = this.productsService.insertProduct(
+    const generatedID = await this.productsService.insertProduct(
       prodTitle,
       prodDesc,
       prodStatus,
